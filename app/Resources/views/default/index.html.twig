@@ -2,8 +2,9 @@
 
 {% block body %}
     <div class="container">
+
         <img class="img-responsive" src="{{ asset('images/logo.jpg') }}">
-        <
+
     </div>
 
 {#
@@ -24,5 +25,9 @@
 
     </div>
  #}
+
+    <div style="outline: 1px solid red">
+        {{ render(path('shoutbox_form')) }}
+    </div>
 {% endblock %}
 
