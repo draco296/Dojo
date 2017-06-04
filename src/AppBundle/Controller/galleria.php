@@ -9,7 +9,17 @@
 namespace AppBundle\Controller;
 
 
-class galleria
-{
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
+class galleria extends Controller
+{
+    /**
+     * @Route("/galleria", name="galleria")
+     */
+    public function galleriaShow(Request $request)
+    {
+        return $this->render('default/galleria.html.twig');
+    }
 }
