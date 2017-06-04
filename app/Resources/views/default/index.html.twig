@@ -1,30 +1,42 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
+    <div id="mycarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="{{ asset('images/logo.jpg')}}" class="img-responsive">
+                <div class="carousel-caption">
+                    <h1 class="text-right">Dragon Dojo Olkusz</h1>
+                    <h2 class="text-right">Wita serdecznie</h2>
 
-        <img class="img-responsive" src="{{ asset('images/logo.jpg') }}">
-
+                </div>
+            </div>
+        </div>
     </div>
 
-{#
-<div class="container">
-   <div class="row">
-        <div class="col-sm-2">
-            <img src="https://www.iconfinder.com/data/icons/ching-zodiac/2118/zdragon-01.png" class="img-responsive">
-        </div>
+    <hr class="featurette-divider">
 
-        <div class="col-sm-8">
-            <h1 style="text-align: center">Witamy w Dragon Dojo</h1>
-            <p style="text-align: center" class="lead">Stronie internwewoej klubu wschodnich sztuk walki.</p>
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="heading">Nasze Dojo.</h2>
+            <p class="lead">Ponazaj historię naszego dojo sięgająca 2004 roku. </p>
         </div>
-        <div class="col-sm-2">
-            <img src="https://www.iconfinder.com/data/icons/ching-zodiac/2118/zdragon-01.png" class="img-responsive">
+        <div class="col-md-4">
+            <img class="featurette-image img-responsive" src="{{ asset('images/zdragon-01.png') }}" alt="Generic placeholder image" width="152" height="118">
         </div>
-
-
     </div>
- #}
+
+    <hr class="featurette-divider">
+
+    <div class="row">
+        <div class="col-md-7 col-md-push-5">
+            <h2 class="featurette-heading">Przygotowanie. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">Wszystko co należy wiedzieć na temat przygotowania do treningu</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+            <img class="featurette-image img-responsive center-block" src="{{ asset('images/zdragon-01.png') }}" alt="Generic placeholder image" image" width="152" height="118">
+        </div>
+    </div>
 
     <div style="outline: 1px solid red">
         {{ render(path('shoutbox_form')) }}
