@@ -85,3 +85,33 @@ fos_user:
     registration:
         confirmation:
           enabled: false
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        gallery_image:
+            uri_prefix:         /upload/images
+            upload_destination: '%kernel.root_dir%/../web/upload/images'
+
+liip_imagine:
+    resolvers:
+        default:
+            web_path: ~
+    filter_sets:
+        cache: ~
+        image_thumb:
+            quality: 75
+            filters:
+                thumbnail: { size: [320, 240], mode: outbound }
+        image_full:
+            quality: 90
+            filters:
+                thumbnail: { size: [1080, 720], mode: outbound }
+

@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ image.title }}</h1>
+        </div>
+
+        <section>
+            <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('image_full') }}" alt="{{ image.title }}" class="thumbnail" width="100%"/>
+        </section>
+
+
+        <section>
+            <header>
+                <h2>Komentarze</h2>
+            </header>
+
+            <p>Brak komentarzy</p>
+        </section>
+    </div>
+{% endblock %}

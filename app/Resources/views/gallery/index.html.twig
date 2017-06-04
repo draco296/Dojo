@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+            <h1>Galeria</h1>
+        </div>
+
+        {% for row in images|batch(4) %}
+            <div class="row">
+                {% for image in row %}
+                    <div class="col-sm-3">
+                        <a href="{{ path('gallery_show', { id: image.id }) }}">
+                            <img src="{{ vich_uploader_asset(image, 'imageFile') | imagine_filter('image_thumb') }}" alt="{{ image.title }}" class="thumbnail" width="200px"/>
+                            <h3>{{ image.title }}</h3>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
