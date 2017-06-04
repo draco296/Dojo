@@ -1,0 +1,27 @@
+<section>
+    <header>
+        <h3>Shoutbox</h3>
+    </header>
+
+    <iframe id="shoutbox" src="{{ path('shoutbox_index') }}" width="100%" height="300px"></iframe>
+
+    {% if app.user %}
+        {{ form_start(form) }}
+            {{ form_row(form.text) }}
+
+            <button type="submit">
+                Wyślij
+            </button>
+        {{ form_end(form) }}
+    {% else %}
+        <p>Zaloguj sie żeby dodawać wiadomości</p>
+    {% endif %}
+</section>
+
+<script type="text/javascript">
+    window.onload = function() {
+        setInterval(function() {
+            window.frames['shoutbox'].contentWindow.location.reload();
+        }, 5000);
+    }
+</script>
